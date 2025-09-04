@@ -14,8 +14,8 @@ jobs:
               sudo chmod 0755 debootstrap/debootstrap
               sudo ln -s $(realpath debootstrap/debootstrap) -t /usr/bin
               sudo ln -s $(realpath debootstrap) -t /usr/share/
-      - name: install qemu-user-static
-        run:  sudo apt install qemu-user-static
+      - name: install required packages
+        run:  sudo apt install libbrotli-dev qemu-user-static
 
       - name: download base gsi.img
         run:  |

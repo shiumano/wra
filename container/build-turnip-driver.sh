@@ -2,6 +2,8 @@
 set -x
 set -e
 
+export CFLAGS="-Wno-implicit-function-declaration"
+
 source() {
     command -v git &> /dev/null || apt-get install git ca-certificates -y --no-install-suggests --no-install-recommends
     [ ! -d "mesa" ] && git clone https://gitlab.freedesktop.org/zsnow/mesa --depth=1
